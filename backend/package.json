@@ -1,0 +1,40 @@
+{
+  "name": "taskpilot-backend",
+  "version": "1.0.0",
+  "description": "TaskPilot backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "db:generate": "npx prisma generate",
+    "db:migrate": "npx prisma migrate deploy",
+    "db:migrate:dev": "npx prisma migrate dev",
+    "db:studio": "npx prisma studio",
+    "db:seed": "node prisma/seed.js",
+    "build": "npx prisma generate"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "prisma",
+    "postgresql",
+    "rest-api"
+  ],
+  "author": "TaskPilot Team",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^5.22.0"
+  }
+}
