@@ -45,8 +45,6 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-
-          {/* ✅ FIX: ROOT ROUTE */}
           <Route path="/" element={<Navigate to="/login" />} />
 
           {/* PUBLIC */}
