@@ -12,17 +12,17 @@ export default function Login() {
 
   const set = f => e => setForm(p => ({ ...p, [f]: e.target.value }));
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); setError('');
-    try {
-      const { data } = await api.post('/auth/login', form);
-      login(data.user, data.token);
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
-    } finally { setLoading(false); }
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  localStorage.setItem("tp_token", "demo");
+  localStorage.setItem("tp_user", JSON.stringify({
+    name: "Payal",
+    role: "admin"
+  }));
+
+  navigate('/dashboard');
+};
 
   const fillDemo = (type) => {
     if (type === 'admin') setForm({ email: 'admin@taskpilot.dev', password: 'Admin@123' });
